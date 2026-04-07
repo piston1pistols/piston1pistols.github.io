@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piston1Pistols | Hub</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Inter:wght@400;700&display=swap');
+
+        :root { 
+            --bg: #0a0a0e; 
+            --card: #12121a; 
+            /* Новый акцент: Пурпурный неон */
+            --accent: #a855f7; 
+            --accent-glow: rgba(168, 85, 247, 0.4);
+            --text: #e0e0e0; 
+        }
+
+        body { 
+            background-color: var(--bg); 
+            color: var(--text); 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Фоновое свечение для атмосферы */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: var(--accent);
+            filter: blur(150px);
+            opacity: 0.15;
+            z-index: -1;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .container { 
+            max-width: 450px; 
+            width: 90%;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .header {
+            margin-bottom: 40px;
+            font-family: 'Rajdhani', sans-serif;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .main-title {
+            font-size: 4rem;
+            margin: 0;
+            line-height: 1;
+            letter-spacing: 6px;
+            /* Градиент от белого к фиолетовому */
+            background: linear-gradient(180deg, #ffffff 30%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px var(--accent-glow));
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            opacity: 0.8;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link-card {
+            background: var(--card);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: fadeInUp 0.8s ease backwards;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Эффект при наведении */
+        .link-card:hover {
+            border-color: var(--accent);
+            transform: scale(1.03);
+            box-shadow: 0 0 20px var(--accent-glow);
+            background: rgba(168, 85, 247, 0.1);
+        }
+
+        /* Анимация появления */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .link-card:nth-child(1) { animation-delay: 0.2s; }
+        .link-card:nth-child(2) { animation-delay: 0.3s; }
+        .link-card:nth-child(3) { animation-delay: 0.4s; }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.7rem;
+            opacity: 0.3;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1 class="main-title">PISTON</h1>
+        <div class="subtitle">DIRECTORY</div>
+    </div>
+
+    <div class="links-container">
+        <a href="https://piston1pistols.github.io/Kustosze-Server/" class="link-card">
+            ⚡ KUSTOSZE SERVER
+        </a>
+
+        <a href="https://github.com/piston1pistols" class="link-card">
+            📂 GITHUB REPOS
+        </a>
+
+        <a href="#" class="link-card">
+            💬 DISCORD / TG
+        </a>
+    </div>
+
+    <div class="footer">
+        Protocol v2.0 | 2026
+    </div>
+</div>
+
+</body>
+</html>
+
